@@ -37,10 +37,10 @@ EOF
 # Sync using our dedicated profile and suppress verbose messages.
 sh -c "aws s3 sync ${SOURCE_DIR:-.} s3://${AWS_S3_BUCKET}/${DEST_DIR} \
             --profile frontend-action \
+            --no-progress \
             --exclude '.git/*' \
             --exclude '.github/*' \
-            --exclude '.gitignore' \ 
-            --no-progress"
+            --exclude '.gitignore'"
 
 sh -c "aws cloudfront create-invalidation \
             --profile frontend-action \
