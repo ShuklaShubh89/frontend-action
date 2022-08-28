@@ -33,7 +33,7 @@ jobs:
     - uses: actions/checkout@master
     - uses: ShuklaShubh89/frontend-action@master
       with:
-        args: --acl public-read --follow-symlinks --delete
+        args: --follow-symlinks --delete
       env:
         AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
