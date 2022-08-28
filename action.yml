@@ -1,0 +1,9 @@
+name: "Frontend Action"
+description: "Sync directory to an AWS S3 repository and invalidate cloudfront cache"
+author: ShuklaShubh89
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: refresh-cw
+  color: green
