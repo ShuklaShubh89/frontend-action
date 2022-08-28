@@ -45,7 +45,7 @@ sh -c "aws s3 sync ${SOURCE_DIR:-.} s3://${AWS_S3_BUCKET}/${DEST_DIR} \
 sh -c "aws cloudfront create-invalidation \
             --profile frontend-action \
             --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION} \
-            --paths "/img/*.png" "/img/*.jpg" "/js/*.js" "
+            --paths "/img/*.png" "/img/*.jpg" "/js/*.js" "/index.html" "
 
 # Clear out credentials after we're done.
 # We need to re-run `aws configure` with bogus input instead of
