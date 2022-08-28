@@ -36,10 +36,11 @@ EOF
 
 # Sync using our dedicated profile and suppress verbose messages.
 sh -c "aws s3 sync ${SOURCE_DIR:-.} s3://${AWS_S3_BUCKET}/${DEST_DIR} \
-            --profile s3-sync-action \
+            --profile frontend-action \
             --no-progress"
 
 sh -c "aws cloudfront create-invalidation \
+            --profile frontend-action \
             --distribution-id ${AWS_CLOUDFRONT_DISTRIBUTION} \
             --paths "/img/*.png" "/img/*.jpg" "/js/*.js" "
 
